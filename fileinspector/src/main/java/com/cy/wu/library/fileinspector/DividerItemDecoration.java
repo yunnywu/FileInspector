@@ -15,27 +15,16 @@ import android.view.View;
  */
 
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
-    /*
-* RecyclerView的布局方向，默认先赋值
-* 为纵向布局
-* RecyclerView 布局可横向，也可纵向
-* 横向和纵向对应的分割想画法不一样
-* */
+
     private int mOrientation = LinearLayoutManager.VERTICAL;
 
-    /**
-     * item之间分割线的size，默认为1
-     */
     private int mItemSize = 1;
 
-    /**
-     * 绘制item分割线的画笔，和设置其属性
-     * 来绘制个性分割线
-     */
+
     private Paint mPaint;
 
     /**
-     * 构造方法传入布局方向，不可不传
+     *
      *
      * @param context
      * @param orientation
@@ -43,13 +32,12 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public DividerItemDecoration(Context context, int orientation) {
         this.mOrientation = orientation;
         if (orientation != LinearLayoutManager.VERTICAL && orientation != LinearLayoutManager.HORIZONTAL) {
-            throw new IllegalArgumentException("请传入正确的参数");
+            throw new IllegalArgumentException("error orientation");
         }
         mItemSize = (int) TypedValue.applyDimension(mItemSize, TypedValue.COMPLEX_UNIT_DIP,
                 context.getResources().getDisplayMetrics());
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.parseColor("#cccccc"));
-         /*设置填充*/
         mPaint.setStyle(Paint.Style.FILL);
     }
 
@@ -63,7 +51,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     /**
-     * 绘制纵向 item 分割线
+     * draw vertical item line
      *
      * @param canvas
      * @param parent
@@ -82,7 +70,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     /**
-     * 绘制横向 item 分割线
+     * draw drawHorizontal item line
      *
      * @param canvas
      * @param parent
@@ -101,7 +89,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     /**
-     * 设置item分割线的size
+     * getItemOffsets set size
      *
      * @param outRect
      * @param view

@@ -23,24 +23,24 @@ public class FileUtil {
         if(!fromFile.exists()){
             return false;
         }
-        if (toFile.exists()) {// 判断目标目录中文件是否存在
+        if (toFile.exists()) {//
             toFile.delete();
-            createFile(toFile, true);// 创建文件
+            createFile(toFile, true);// create file
         }
         InputStream is = null;
         FileOutputStream fos = null;
         try {
-            is = new FileInputStream(fromFile);// 创建文件输入流
-            fos = new FileOutputStream(toFile);// 文件输出流
-            byte[] buffer = new byte[1024];// 字节数组
-            while (is.read(buffer) != -1) {// 将文件内容写到文件中
+            is = new FileInputStream(fromFile);
+            fos = new FileOutputStream(toFile);
+            byte[] buffer = new byte[1024];
+            while (is.read(buffer) != -1) {
                 fos.write(buffer);
             }
             return true;
-        } catch (FileNotFoundException e) {// 捕获文件不存在异常
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
             return false;
-        } catch (IOException e) {// 捕获异常
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }finally {
@@ -52,26 +52,26 @@ public class FileUtil {
     private static void closeSilence(Closeable is) {
         if(is!=null) {
             try {
-                is.close();// 输入流关闭
+                is.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    static void createFile(File file, boolean isFile) {// 创建文件
-        if (!file.exists()) {// 如果文件不存在
-            if (!file.getParentFile().exists()) {// 如果文件父目录不存在
+    static void createFile(File file, boolean isFile) {
+        if (!file.exists()) {
+            if (!file.getParentFile().exists()) {
                 createFile(file.getParentFile(), false);
-            } else {// 存在文件父目录
-                if (isFile) {// 创建文件
+            } else {
+                if (isFile) {
                     try {
-                        file.createNewFile();// 创建新文件
+                        file.createNewFile();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else {
-                    file.mkdir();// 创建目录
+                    file.mkdir();
                 }
             }
         }
