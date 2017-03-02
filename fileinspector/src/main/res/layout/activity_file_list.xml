@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_file_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="wu.cy.com.inspect.FileListActivity">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3F51B5"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white">
+    </android.support.v7.widget.Toolbar>
+
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tb_toolbar"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider1"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="36dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:paddingRight="12dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#222735"
+            android:textSize="16sp"
+            android:layout_toRightOf="@+id/iv_back"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rl_back"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#ccc"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="visible"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/rl_no_file"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider2"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/iv_no_file"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_none_file"
+            />
+
+        <TextView
+            android:id="@+id/tv_no_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_no_file"
+            android:layout_centerHorizontal="true"
+            android:textColor="#8a89ac"
+            android:textSize="14sp"
+            android:text="No files"
+            android:layout_marginTop="8dp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

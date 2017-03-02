@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                >
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_file"
+        />
+
+    <TextView
+        android:id="@+id/tv_fileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_arrow"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:maxLines="2"
+        android:ellipsize="middle"
+        android:layout_marginLeft="12dp"
+        android:textColor="#222735"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_fileModify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_arrow"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:singleLine="true"
+        android:ellipsize="middle"
+        android:layout_marginLeft="12dp"
+        android:textColor="#8a89ac"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_fileName"
+        android:layout_marginTop="4dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_arrow"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
